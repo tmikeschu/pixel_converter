@@ -20,8 +20,7 @@ cd pixel_converter
 
 bundle
 
-sudo cp bin/pixel_convert /usr/bin/pixel_convert
-sudo cp bin/pixel_convert /usr/local/bin
+sudo ln -s $HOME/path/to/clone/bin/pixel_convert /usr/local/bin/pixel_convert                    
 ```
 
 ## Usage
