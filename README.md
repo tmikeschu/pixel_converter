@@ -1,4 +1,5 @@
-[//]: <> (![]\(\) badges)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c2c6c583831dc61c4031/maintainability)](https://codeclimate.com/github/tmikeschu/pixel_converter/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c2c6c583831dc61c4031/test_coverage)](https://codeclimate.com/github/tmikeschu/pixel_converter/test_coverage)
 
 # Pixel Converter
 
@@ -18,6 +19,13 @@ git clone git@github.com:tmikeschu/pixel_converter.git
 cd pixel_converter
 bundle
 ```
+
+## Usage
+
+With this repo cloned and installed, you can use the `pixel_convert`
+executable with command line arguments.
+
+E.g., `pixel_convert rem 10 path/to/file`.
 
 ## Testing
 
