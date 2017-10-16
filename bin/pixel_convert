@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+#
+root_dir = File.expand_path "../..", __FILE__
+$LOAD_PATH.unshift root_dir + "/lib"
+
+require "pixel_converter"
+
+unit      = ARGV[0]
+scale     = ARGV[1]
+file_path = ARGV[2]
+
+if ARGV != [unit, scale, file_path]
+  $stderr.puts "Please enter a measurement unit, scale, and file path."
+  exit 1
+end
+
+if PixelConverter.convert_to(unit, scale, file_path)
+  copy = file_path.dup.insert(file_path.rindex("."), ".copy")
+  puts "File copied to #{copy}"
+end
+
+
