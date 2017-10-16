@@ -15,6 +15,7 @@ RSpec.describe PixelConverter do
   before do
     allow(File).to receive(:read) { file.read }
     allow(File).to receive(:new)  { file }
+    allow(file).to receive(:puts) { nil }
   end
 
   describe ".convert_to" do

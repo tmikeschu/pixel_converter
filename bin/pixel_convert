@@ -1,11 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-#
-root_dir = File.expand_path "../..", __FILE__
-$LOAD_PATH.unshift root_dir + "/lib"
-
-require "pixel_converter"
+require_relative "../lib/pixel_converter.rb"
 
 unit      = ARGV[0]
 scale     = ARGV[1]
@@ -16,7 +12,7 @@ if ARGV != [unit, scale, file_path]
   exit 1
 end
 
-if PixelConverter.convert_to(unit, scale, file_path)
+if PixelConverter.convert_to(unit, scale.to_i, file_path)
   copy = file_path.dup.insert(file_path.rindex("."), ".copy")
   puts "File copied to #{copy}"
 end
