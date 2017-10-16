@@ -4,10 +4,15 @@ class PixelConverter
   end
 
   def convert
-    new_name = file.dup.insert(file.rindex('.'), ".copy")
-    copy     = File.new(new_name, "w")
-    copy.puts(converted)
-    copy.close
+    begin
+      new_name = file.dup.insert(file.rindex("."), ".copy")
+      copy     = File.new(new_name, "w")
+      copy.puts(converted)
+      copy.close
+      true
+    rescue
+      raise IOError.new("Something went wrong there")
+    end
   end
 
   def converted
@@ -32,8 +37,8 @@ class PixelConverter
               :unit
 
   def initialize(unit, scale, file)
-    @unit = unit
-    @file = file
+    @unit  = unit
+    @file  = file
     @scale = scale
   end
 
