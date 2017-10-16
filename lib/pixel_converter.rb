@@ -4,15 +4,11 @@ class PixelConverter
   end
 
   def convert
-    begin
-      new_name = file.dup.insert(file.rindex("."), ".copy")
-      copy     = File.new(new_name, "w")
-      copy.puts(converted)
-      copy.close
-      true
-    rescue
-      raise IOError.new("Something went wrong there")
-    end
+    new_name = file.dup.insert(file.rindex("."), ".copy")
+    copy     = File.new(new_name, "w")
+    copy.puts(converted)
+    copy.close
+    true
   end
 
   def converted
