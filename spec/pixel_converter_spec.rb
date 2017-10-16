@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 require "pixel_converter"
 
 RSpec.describe PixelConverter do
-  let(:file)      { StringIO.new(scss) }
+  let(:file) { StringIO.new(scss) }
   let(:scss) { ".container {\n  font-size: 16px;\n  margin: 10px;\n}" }
   let(:unit)      { "rem" }
   let(:scale)     { 10 }
@@ -46,4 +48,3 @@ RSpec.describe PixelConverter do
     end
   end
 end
-

@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Converts stylesheet files with px measurements
+# to any other unit based on a scale
 class PixelConverter
   def self.convert_to(unit, scale, file)
     new(unit, scale, file).convert
@@ -15,8 +19,8 @@ class PixelConverter
     lines.map do |line|
       px_matches = line.scan(px_regex)
 
-      if px_matches.length > 0
-        px_matches.each_with_index do |match|
+      unless px_matches.empty?
+        px_matches.each do |match|
           new_value = match.split(/(px)/)[0].to_f / scale
           line.gsub!(match, "#{new_value}#{unit}")
         end
@@ -50,4 +54,3 @@ class PixelConverter
     /\d+px/
   end
 end
-
