@@ -17,7 +17,11 @@ recommend the SSH route:
 ```
 git clone git@github.com:tmikeschu/pixel_converter.git
 cd pixel_converter
+
 bundle
+
+sudo cp bin/pixel_convert /usr/bin/pixel_convert
+sudo cp bin/pixel_convert /usr/local/bin
 ```
 
 ## Usage
